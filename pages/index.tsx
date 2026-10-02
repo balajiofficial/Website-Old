@@ -9,11 +9,11 @@ export default function Home(): ReactElement<ReactFragment> {
       <PageSEO index />
       <div className="text-black dark:text-white">
         <div className="relative">
-          <div className="lg:pt-48 md:pt-36 sm:pt-12 pt-20">
+          <div className="min-h-[calc(100dvh-4rem)] pb-16 flex flex-col justify-center">
             <h1 className="dark:text-gray-100 flex justify-center text-center text-8xl sm:text-8xl pb-7 sm:pb-10 font-semibold font-about select-none">
               Balaji Kannan
             </h1>
-            <div className="flex justify-center mt-3 md:mt-10">
+            <div className="flex justify-center mt-8 md:mt-16">
               <div className="text-white dark:text-white flex md:justify-evenly w-auto md:w-11/12 lg:w-3/4 flex-col md:flex-row">
                 <div className="pt-3 pb-3">
                   <a

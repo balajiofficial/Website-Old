@@ -14,7 +14,7 @@ export const content: Array<{
     links: [
       { label: "Icon Source", link: "https://www.flaticon.com/free-icons/key" },
     ],
-    img: "https://raw.githubusercontent.com/balajiofficial/Website/main/content/Password_Manager.png",
+    img: "https://raw.githubusercontent.com/balajiofficial/Website-Old/main/content/Password_Manager.png",
   },
   {
     title: "Data Plotter",
@@ -76,7 +76,7 @@ export const content: Array<{
       { label: "GitHub", link: "https://github.com/balajiofficial/Website" },
       { label: "Website", link: "/" },
     ],
-    img: "https://raw.githubusercontent.com/balajiofficial/Website/main/content/Screenshot.png",
+    img: "https://raw.githubusercontent.com/balajiofficial/Website-Old/main/content/Screenshot.png",
   },
   {
     title: "Bala Notes",

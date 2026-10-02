@@ -8,7 +8,7 @@ export default function PageSEO({ title = "", index = false }) {
         {index ? (
           <title>Balaji Kannan</title>
         ) : (
-          <title>{title} | Balaji Kannan</title>
+          <title>{`${title} | Balaji Kannan`}</title>
         )}
         <link
           href={

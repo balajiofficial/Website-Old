@@ -5,7 +5,7 @@ export default class Navbar extends Component<{
   themeFunc: (theme: string) => void;
 }> {
   state = {
-    theme: "light",
+    theme: "dark",
     aboutMenu: false,
   };
 
@@ -28,7 +28,7 @@ export default class Navbar extends Component<{
 
     localStorage.setItem(
       "theme",
-      localStorage.getItem("theme") == "dark" ? "dark" : "light",
+      localStorage.getItem("theme") == "light" ? "light" : "dark",
     );
 
     this.setState({ theme: localStorage.getItem("theme") });
@@ -43,20 +43,20 @@ export default class Navbar extends Component<{
   render(): ReactElement<HTMLDivElement> {
     return (
       <div className="top-0">
-        <nav className="min-h-full h-16 text-base sm:text-lg lg:text-xl bg-gradient-to-r from-purple-600 to-blue-600  text-white dark:text-white dark:from-indigo-600 dark:to-sky-500">
+        <nav className="min-h-full h-16 text-base sm:text-lg lg:text-xl bg-transparent text-black dark:text-white">
           <div>
             <div className="flex justify-evenly font-medium">
               {this.pages.map((e) => {
                 return e.label == "About" ? (
                   <div
                     key={e.label}
-                    className="text-white hover:no-underline no-underline"
+                    className="hover:no-underline no-underline"
                     onClick={() => {
                       this.setState({ aboutMenu: !this.state.aboutMenu });
                     }}
                   >
                     <div className="cursor-pointer">
-                      <div className="border-b-2 border-transparent dark:hover:border-white hover:border-white mt-5 sm:mt-3.5 md:mt-4">
+                      <div className="border-b-2 border-transparent dark:hover:border-white hover:border-black mt-5 sm:mt-3.5 md:mt-4">
                         {e.label}
                       </div>
                     </div>
@@ -72,7 +72,7 @@ export default class Navbar extends Component<{
                       <div className="cursor-pointer">
                         <div
                           key={e.page}
-                          className="border-b-2 border-transparent dark:hover:border-white hover:border-white mt-5 sm:mt-3.5 md:mt-4"
+                          className="border-b-2 border-transparent dark:hover:border-white hover:border-black mt-5 sm:mt-3.5 md:mt-4"
                         >
                           {e.label}
                         </div>
