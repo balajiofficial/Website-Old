@@ -1,12 +1,12 @@
 import Layout from "../../layouts/pageLayout";
-import { ReactElement, ReactFragment } from "react";
+import { ReactElement } from "react";
 import PageSEO from "../../components/seo";
 import PostTab from "../../components/tab";
 import pl1 from "../../components/skills/pl1";
 import pl2 from "../../components/skills/pl2";
 import pl3 from "../../components/skills/pl3";
 
-export default function Skills(): ReactElement<ReactFragment> {
+export default function Skills(): ReactElement {
   return (
     <Layout>
       <PageSEO title="Skills" />

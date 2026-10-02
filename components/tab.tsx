@@ -9,7 +9,7 @@ export default function PostTab({ title, description }) {
     <div>
       <div className="cursor-pointer">
         <div
-          className={`bg-gradient-to-r from-sky-500 to-purple-700 text-white text-lg sm:text-2xl ${
+          className={`bg-linear-to-r from-sky-500 to-purple-700 text-white text-lg sm:text-2xl ${
             expandDescription ? "sm:rounded-t-lg" : "sm:rounded-lg"
           } flex items-center h-11 mt-5`}
           onClick={() => {

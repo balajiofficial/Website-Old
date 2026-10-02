@@ -73,12 +73,9 @@ export default function PostPage({
                           <div>
                             <Link
                               href={`/post/${post.slug}`}
-                              passHref
-                              legacyBehavior
+                              className="text-2xl md:text-3xl font-extrabold text-black hover:text-sky-500 dark:text-white dark:hover:text-cyan-400"
                             >
-                              <a className="text-2xl md:text-3xl font-extrabold text-black hover:text-sky-500 dark:text-white dark:hover:text-cyan-400">
-                                {post.title}
-                              </a>
+                              {post.title}
                             </Link>
                             <div className="flex">
                               <div className="font-about text-base md:text-lg text-gray-600 dark:text-gray-400 mt-1">

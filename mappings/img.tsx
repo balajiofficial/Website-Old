@@ -5,10 +5,10 @@ export default function PostImage({
   src,
   alt,
   ...props
-}): ReactElement<HTMLDivElement> {
+}): ReactElement<HTMLSpanElement> {
   return (
-    <div className="flex justify-center mt-5 mb-5">
+    <span className="flex justify-center mt-5 mb-5">
       <img src={src} alt={alt} {...props} />
-    </div>
+    </span>
   );
 }

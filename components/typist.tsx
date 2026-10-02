@@ -17,25 +17,23 @@ export default function Typist() {
   const [reverse, setReverse] = useState(false);
 
   useEffect(() => {
-    if (subIndex === words[index].length + 1 && !reverse) {
-      setReverse(true);
-      return;
-    }
-
-    if (subIndex === 0 && reverse) {
-      setReverse(false);
-      setIndex((index + 1) % words.length);
-      if (index == words.length - 2) {
-        setRtl(true);
-      } else {
-        setRtl(false);
-      }
-      return;
-    }
-
     const timeout = setTimeout(
       () => {
-        setSubIndex(subIndex + (reverse ? -1 : 1));
+        if (subIndex === words[index].length && !reverse) {
+          setSubIndex(subIndex + 1);
+          setReverse(true);
+        } else if (subIndex === 1 && reverse) {
+          setSubIndex(0);
+          setReverse(false);
+          setIndex((index + 1) % words.length);
+          if (index == words.length - 2) {
+            setRtl(true);
+          } else {
+            setRtl(false);
+          }
+        } else {
+          setSubIndex(subIndex + (reverse ? -1 : 1));
+        }
       },
       reverse ? 75 : subIndex === words[index].length ? 1500 : 75,
     );

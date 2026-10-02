@@ -11,7 +11,7 @@ export default function PostCode({
   const [copied, setCopied] = useState(false);
   const [codeTheme, setCodeTheme] = useState(true);
 
-  children = children.trim();
+  const code = children.trim();
 
   const language = className.replace("language-", "");
   const getLanguageText = () => {
@@ -30,7 +30,7 @@ export default function PostCode({
 
   const copyIt = () => {
     setCopied(true);
-    navigator.clipboard.writeText(children);
+    navigator.clipboard.writeText(code);
     setTimeout(() => {
       setCopied(false);
     }, 1000);
@@ -44,7 +44,7 @@ export default function PostCode({
     <div>
       <Highlight
         theme={codeTheme == true ? themes.vsDark : themes.vsLight}
-        code={children}
+        code={code}
         language={language as Language}
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
@@ -83,7 +83,7 @@ export default function PostCode({
               {tokens.map((line, i) => (
                 <div
                   key={i}
-                  {...getLineProps({ line, key: i })}
+                  {...getLineProps({ line })}
                   className="table-row"
                 >
                   <div className="table-cell text-right pr-4 pl-1.5 text-gray-500 select-none">
@@ -91,7 +91,7 @@ export default function PostCode({
                   </div>
                   <div className="table-cell">
                     {line.map((token, key) => (
-                      <span key={key} {...getTokenProps({ token, key })} />
+                      <span key={key} {...getTokenProps({ token })} />
                     ))}
                   </div>
                 </div>

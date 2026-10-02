@@ -1,9 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
-import { ReactElement, ReactFragment } from "react";
+import { ReactElement } from "react";
 import PageSEO from "../components/seo";
 import IndexLayout from "../layouts/indexLayout";
 
-export default function Home(): ReactElement<ReactFragment> {
+export default function Home(): ReactElement {
   return (
     <IndexLayout>
       <PageSEO index />
@@ -81,7 +80,7 @@ export default function Home(): ReactElement<ReactFragment> {
                   >
                     <button className="bg-blue-800 hover:bg-blue-700 rounded-lg p-3 dark:hover:shadow-gray-600 font-semibold h-14 hover:shadow-xl hover:-translate-y-1 transform transition-all duration-150">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 inline-block">
-                        <path fill-rule="evenodd" d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625ZM7.5 15a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 7.5 15Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H8.25Z" clip-rule="evenodd" />
+                        <path fillRule="evenodd" d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625ZM7.5 15a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 7.5 15Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H8.25Z" clipRule="evenodd" />
                         <path d="M12.971 1.816A5.23 5.23 0 0 1 14.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 0 1 3.434 1.279 9.768 9.768 0 0 0-6.963-6.963Z" />
                       </svg>
 
@@ -94,7 +93,7 @@ export default function Home(): ReactElement<ReactFragment> {
                 <div className="pt-3 pb-3">
                   <a href="mailto:balaji.kannan@tcu.edu">
                     <button
-                      className="bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 dark:hover:from-pink-500 dark:hover:to-pink-600 dark:hover:shadow-gray-600 rounded-lg p-3 font-semibold h-14 hover:shadow-xl hover:-translate-y-1 transform transition-all duration-150"
+                      className="bg-linear-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 dark:hover:from-pink-500 dark:hover:to-pink-600 dark:hover:shadow-gray-600 rounded-lg p-3 font-semibold h-14 hover:shadow-xl hover:-translate-y-1 transform transition-all duration-150"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

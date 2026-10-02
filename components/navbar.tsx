@@ -62,22 +62,15 @@ export default class Navbar extends Component<{
                     </div>
                   </div>
                 ) : (
-                  <Link
-                    href={`/${e.page}`}
-                    key={e.label}
-                    passHref
-                    legacyBehavior
-                  >
-                    <a>
-                      <div className="cursor-pointer">
-                        <div
-                          key={e.page}
-                          className="border-b-2 border-transparent dark:hover:border-white hover:border-black mt-5 sm:mt-3.5 md:mt-4"
-                        >
-                          {e.label}
-                        </div>
+                  <Link href={`/${e.page}`} key={e.label}>
+                    <div className="cursor-pointer">
+                      <div
+                        key={e.page}
+                        className="border-b-2 border-transparent dark:hover:border-white hover:border-black mt-5 sm:mt-3.5 md:mt-4"
+                      >
+                        {e.label}
                       </div>
-                    </a>
+                    </div>
                   </Link>
                 );
               })}
@@ -146,13 +139,10 @@ export default class Navbar extends Component<{
                               ? "/resume.pdf"
                               : `/about/${e.page}`
                           }
-                          passHref
                           key={e.label}
-                          legacyBehavior
+                          className="text-black dark:text-white border-b-2 border-transparent hover:border-black dark:border-transparent dark:hover:border-white"
                         >
-                          <a className="text-black dark:text-white border-b-2 border-transparent hover:border-black dark:border-transparent dark:hover:border-white">
-                            <p>{e.label}</p>
-                          </a>
+                          <p>{e.label}</p>
                         </Link>
                       );
                     })}

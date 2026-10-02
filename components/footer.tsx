@@ -42,10 +42,11 @@ export default class Footer extends Component<{ fixEnd: boolean }> {
           <div className="mx-auto pt-3.5 pb-3.5 dark:text-gray-300">
             <span className="text-center sm:flex sm:justify-evenly">
               <div>
-                <Link href="/credits" legacyBehavior>
-                  <a className="text-black dark:text-gray-300 border-b-2 hover:border-black border-transparent dark:hover:border-gray-300 dark:border-transparent">
-                    Credits
-                  </a>
+                <Link
+                  href="/credits"
+                  className="text-black dark:text-gray-300 border-b-2 hover:border-black border-transparent dark:hover:border-gray-300 dark:border-transparent"
+                >
+                  Credits
                 </Link>
               </div>
               <div className="mb-1 md:mb-0">

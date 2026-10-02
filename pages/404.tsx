@@ -1,9 +1,9 @@
 import Layout from "../layouts/pageLayout";
 import Link from "next/link";
-import { ReactElement, ReactFragment } from "react";
+import { ReactElement } from "react";
 import PageSEO from "../components/seo";
 
-export default function FourOFour(): ReactElement<ReactFragment> {
+export default function FourOFour(): ReactElement {
   return (
     <Layout>
       <PageSEO title="Error 404" />

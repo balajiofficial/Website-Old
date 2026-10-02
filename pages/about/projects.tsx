@@ -1,10 +1,10 @@
 import Layout from "../../layouts/pageLayout";
 import Image from "next/image";
-import { ReactElement, ReactFragment } from "react";
+import { ReactElement } from "react";
 import { content } from "../../content/dataProjects";
 import PageSEO from "../../components/seo";
 
-export default function Projects(): ReactElement<ReactFragment> {
+export default function Projects(): ReactElement {
   return (
     <Layout>
       <PageSEO title="Projects" />
@@ -14,7 +14,7 @@ export default function Projects(): ReactElement<ReactFragment> {
             {content.map((e, index) => {
               return (
                 <div
-                  className={`rounded-none sm:rounded-lg bg-gradient-to-br ${
+                  className={`rounded-none sm:rounded-lg bg-linear-to-br ${
                     [
                       "from-sky-400 to-blue-700",
                       "from-yellow-400 to-yellow-700",
@@ -26,10 +26,10 @@ export default function Projects(): ReactElement<ReactFragment> {
                   key={e.title}
                 >
                   <div className="flex flex-col lg:flex-row items-center">
-                    <div className="break-words">
+                    <div className="wrap-break-word">
                       <div className="flex justify-between">
                         <div>
-                          <div className="break-words">
+                          <div className="wrap-break-word">
                             <p className="text-2xl font-semibold">{e.title}</p>
                           </div>
                           <p className="text-white text-sm font-normal">
@@ -40,7 +40,7 @@ export default function Projects(): ReactElement<ReactFragment> {
                               {e.keywords.map((keyword: string) => {
                                 return (
                                   <div
-                                    className="mr-2 rounded bg-sky-400 pl-1 pr-1 pt-0.5 pb-0.5 mt-1.5 font-semibold"
+                                    className="mr-2 rounded-sm bg-sky-400 pl-1 pr-1 pt-0.5 pb-0.5 mt-1.5 font-semibold"
                                     key={keyword}
                                   >
                                     {keyword}
@@ -80,7 +80,7 @@ export default function Projects(): ReactElement<ReactFragment> {
                       </div>
                     </div>
                     <div className="mt-3 lg:mt-0">
-                      <div className="sm:bg-opacity-50 bg-transparent sm:bg-gray-300 p-0 md:p-7 lg:p-3 rounded-lg">
+                      <div className="bg-transparent sm:bg-gray-300/50 p-0 md:p-7 lg:p-3 rounded-lg">
                         <Image
                           src={e.img}
                           alt={e.title}

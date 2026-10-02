@@ -3,7 +3,7 @@ import { join } from "path";
 import matter from "gray-matter";
 import readingTime from "reading-time";
 import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemoteSerializeResult } from "next-mdx-remote/dist/types";
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 const postsDirectory = join(process.cwd(), "posts");
 

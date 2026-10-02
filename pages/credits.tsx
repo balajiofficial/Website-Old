@@ -1,11 +1,11 @@
-import { ReactElement, ReactFragment } from "react";
+import { ReactElement } from "react";
 import PageSEO from "../components/seo";
 import Layout from "../layouts/pageLayout";
 import PostLink from "../mappings/a";
 import PostListItem from "../mappings/li";
 import PostUnorderedList from "../mappings/ul";
 
-export default function CreditsPage(): ReactElement<ReactFragment> {
+export default function CreditsPage(): ReactElement {
   return (
     <Layout>
       <PageSEO title="Credits" />

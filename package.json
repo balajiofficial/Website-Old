@@ -7,31 +7,32 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "css": "tailwindcss build -i styles/global.css -o styles/styles.css",
+    "lint": "eslint .",
+    "css": "tailwindcss -i styles/global.css -o styles/styles.css",
     "prettier": "prettier --write ."
   },
   "dependencies": {
+    "@tsparticles/engine": "^4.4.0",
+    "@tsparticles/react": "^4.4.0",
+    "@tsparticles/slim": "^4.4.0",
     "gray-matter": "^4.0.3",
-    "next": "^13.4.19",
-    "next-mdx-remote": "^4.4.1",
-    "prism-react-renderer": "^2.0.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-pdf": "^7.5.1",
-    "react-tsparticles": "1.40.2",
+    "next": "^16.3.8",
+    "next-mdx-remote": "^6.0.0",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "reading-time": "^1.5.0",
-    "sharp": "^0.32.5"
+    "sharp": "^0.35.5"
   },
   "devDependencies": {
-    "@types/node": "^22.18.6",
-    "@types/react": "^18.2.21",
-    "autoprefixer": "^10.4.15",
-    "eslint": "^8.49.0",
-    "eslint-config-next": "^13.4.19",
-    "postcss": "^8.4.29",
-    "prettier": "^3.0.3",
-    "tailwindcss": "^3.3.3",
-    "typescript": "^5.2.2"
+    "@tailwindcss/cli": "^4.3.3",
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.8",
+    "prettier": "^3.9.9",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3"
   }
 }

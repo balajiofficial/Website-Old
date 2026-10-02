@@ -1,6 +1,12 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Navbar from "../components/navbar";
-import Particles from "react-tsparticles";
+import Particles, { ParticlesProvider } from "@tsparticles/react";
+import type { Engine, ISourceOptions } from "@tsparticles/engine";
+import { loadSlim } from "@tsparticles/slim";
+
+const initParticles = async (engine: Engine) => {
+  await loadSlim(engine);
+};
 
 export default function IndexLayout({ children }) {
   const [theme, setTheme] = useState("light");
@@ -8,116 +14,90 @@ export default function IndexLayout({ children }) {
     setTheme(theme);
   };
 
+  const particlesOptions = useMemo((): ISourceOptions => {
+    const color = theme == "dark" ? "#FFFFFF" : "#000000";
+    return {
+      fullScreen: {
+        enable: true,
+        zIndex: -1,
+      },
+      particles: {
+        number: {
+          value: 200,
+          density: {
+            enable: true,
+            width: 1803,
+            height: 1000,
+          },
+        },
+        paint: {
+          fill: {
+            enable: true,
+            color: { value: color },
+          },
+          stroke: {
+            width: 2,
+            color: { value: color },
+          },
+        },
+        shape: {
+          type: "circle",
+        },
+        opacity: {
+          value: 0.4008530152163807,
+        },
+        size: {
+          value: { min: 1, max: 1.5 },
+        },
+        links: {
+          enable: true,
+          distance: 150,
+          color: color,
+          opacity: 0.3687847739990702,
+          width: 0.6413648243462091,
+        },
+        move: {
+          enable: true,
+          speed: 4,
+          direction: "none",
+          random: false,
+          straight: false,
+          outModes: "out",
+        },
+      },
+      interactivity: {
+        detectsOn: "window",
+        events: {
+          onHover: {
+            enable: true,
+            mode: "repulse",
+          },
+          onClick: {
+            enable: true,
+            mode: "push",
+          },
+        },
+        modes: {
+          repulse: {
+            distance: 120,
+            duration: 0.4,
+          },
+          push: {
+            quantity: 5,
+          },
+        },
+      },
+      detectRetina: true,
+    };
+  }, [theme]);
+
   return (
     <div>
       <Navbar themeFunc={themeFunc} />
       <div className="w-full absolute left-0 lg:visible invisible">
-        <Particles
-          params={{
-            particles: {
-              number: {
-                value: 200,
-                density: {
-                  enable: true,
-                  value_area: 1803.4120608655228,
-                },
-              },
-              color: {
-                value: theme == "dark" ? "#FFFFFF" : "#000000",
-              },
-              shape: {
-                type: "circle",
-                stroke: {
-                  width: 2,
-                  color: theme == "dark" ? "#FFFFFF" : "#000000",
-                },
-                polygon: {
-                  nb_sides: 6,
-                },
-              },
-              opacity: {
-                value: 0.4008530152163807,
-                random: false,
-                anim: {
-                  enable: false,
-                  speed: 2,
-                  opacity_min: 0.1,
-                  sync: false,
-                },
-              },
-              size: {
-                value: 1.5,
-                random: true,
-                anim: {
-                  enable: false,
-                  speed: 40,
-                  size_min: 0.1,
-                  sync: false,
-                },
-              },
-              line_linked: {
-                enable: true,
-                distance: 150,
-                color: theme == "dark" ? "#FFFFFF" : "#000000",
-                opacity: 0.3687847739990702,
-                width: 0.6413648243462091,
-              },
-              move: {
-                enable: true,
-                speed: 4,
-                direction: "none",
-                random: false,
-                straight: false,
-                out_mode: "out",
-                bounce: false,
-                attract: {
-                  enable: false,
-                  rotateX: 600,
-                  rotateY: 1200,
-                },
-              },
-            },
-            interactivity: {
-              detect_on: "window",
-              events: {
-                onhover: {
-                  enable: true,
-                  mode: "repulse",
-                },
-                onclick: {
-                  enable: true,
-                  mode: "push",
-                },
-                resize: true,
-              },
-              modes: {
-                grab: {
-                  distance: 400,
-                  line_linked: {
-                    opacity: 1,
-                  },
-                },
-                bubble: {
-                  distance: 400,
-                  size: 40,
-                  duration: 2,
-                  opacity: 8,
-                },
-                repulse: {
-                  distance: 120,
-                  duration: 0.4,
-                },
-                push: {
-                  particles_nb: 5,
-                },
-                remove: {
-                  particles_nb: 2,
-                },
-              },
-            },
-            retina_detect: true,
-          }}
-        />
+        <ParticlesProvider init={initParticles}>
+          <Particles options={particlesOptions} />
+        </ParticlesProvider>
       </div>
       {children}
     </div>

@@ -1,4 +1,4 @@
-import React, { ReactFragment } from "react";
+import React from "react";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import Image from "next/image";
 import Layout from "../../layouts/pageLayout";

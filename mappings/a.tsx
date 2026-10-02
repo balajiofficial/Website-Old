@@ -8,10 +8,8 @@ export default function PostLink({ href, children, ...props }) {
 
   if (isLocal) {
     return (
-      <Link href={href} passHref legacyBehavior>
-        <a className={linkClass} {...props}>
-          {children}
-        </a>
+      <Link href={href} className={linkClass} {...props}>
+        {children}
       </Link>
     );
   } else {
